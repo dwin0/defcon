@@ -33,6 +33,10 @@ body {
     transform: skewY(-4deg);
     padding: 100px 20px;
     text-align: center;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (min-width: 650px) {
     .topic {
