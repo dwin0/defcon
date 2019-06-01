@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background: #deeaf6;
+}
+
+/*  ----------------- menu ----------------- */
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-item {
+    padding: 10px;
+}
+
+.menu-item__link {
+    text-decoration: none;
+}
+
+.menu-item__link:hover {
+    text-decoration: underline;
+}
+
+/*  ----------------- slideshow ----------------- */
+.slideshow {
+    height: 100px;
+}
+
+/*  ----------------- topic ----------------- */
+.topic {
+    transform: skewY(-4deg);
+    padding: 75px 50px;
+    text-align: center;
+}
+.topic--last-topic {
+    position: relative;
+}
+
+.topic--beer-on-tuesday, /* maybe nth-of-type */
+.topic--about-us {
+    background: #122c3a;
+    color: #deeaf6;
+}
+.topic--dojo,
+.topic--contact {
+    background: #deeaf6;
+    color: #122c3a;
+}
+
+.topic__inner {
+    transform: skewY(4deg);
+}

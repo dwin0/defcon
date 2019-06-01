@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="index.css">
+        <!-- TODO: favicon -->
 
-    <title>Defcon website</title>
-</head>
-<body>
-    <p>Content</p>
-</body>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="index.css" />
+
+        <title>Defcon website</title>
+    </head>
+    <body>
+        <header>
+            <ul class="menu">
+                <li class="menu-item">
+                    <a class="menu-item__link" href="/events">Events</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item__link" href="/about-us">About us</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item__link" href="/contact">contact</a>
+                </li>
+            </ul>
+
+            <div class="slideshow">
+                <!-- TODO: pure js slideshow -->
+                Header content
+            </div>
+        </header>
+        <main>
+            <section class="topic topic--beer-on-tuesday">
+                <div class="topic__inner">
+                    <p>Beer on tuesday</p>
+                </div>
+            </section>
+            <section class="topic topic--dojo">
+                <div class="topic__inner">
+                    <p>Dojo</p>
+                </div>
+            </section>
+            <section class="topic topic--about-us">
+                <div class="topic__inner">
+                    <p>About us</p>
+                </div>
+            </section>
+            <section class="topic topic--contact topic--last-topic">
+                <div class="topic__inner">
+                    <p>Contact</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- <script src="index.js"></script> -->
+    </body>
 </html>
