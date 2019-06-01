@@ -2,6 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     background: #deeaf6;
+    font-size: 20px;
 }
 
 /*  ----------------- menu ----------------- */
@@ -30,11 +31,13 @@ body {
 /*  ----------------- topic ----------------- */
 .topic {
     transform: skewY(-4deg);
-    padding: 75px 50px;
+    padding: 100px 20px;
     text-align: center;
 }
-.topic--last-topic {
-    position: relative;
+@media (min-width: 650px) {
+    .topic {
+        padding: 100px 50px;
+    }
 }
 
 .topic--beer-on-tuesday, /* maybe nth-of-type */
@@ -50,4 +53,54 @@ body {
 
 .topic__inner {
     transform: skewY(4deg);
+}
+
+.topic__text-wrapper {
+    order: 1;
+    margin: auto;
+    line-height: 1.25;
+}
+@media (min-width: 650px) {
+    .topic__text-wrapper {
+        flex: 1 1 50%;
+        order: 0;
+    }
+}
+
+.topic__title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.topic__text {
+    max-width: 650px;
+    margin: auto;
+}
+
+.topic__image-wrapper {
+    flex: 1 1 50%;
+}
+
+.topic__image {
+    max-width: 150px;
+    height: auto;
+    width: auto;
+    margin: 50px;
+}
+
+/*  ----------------- layout ----------------- */
+
+.two-column-large-one-column-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 650px) {
+    .two-column-large-one-column-small {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }
