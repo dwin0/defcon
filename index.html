@@ -15,6 +15,15 @@
     <body>
         <header>
             <ul class="menu">
+                <li class="menu-item menu-item--logo">
+                    <a href="." class="menu-item__link">
+                        <img
+                            src="images/logo.png"
+                            alt="defcon switzerland logo"
+                            class="menu-item__logo"
+                        />
+                    </a>
+                </li>
                 <li class="menu-item">
                     <a class="menu-item__link" href="events">Events</a>
                 </li>
@@ -22,13 +31,24 @@
                     <a class="menu-item__link" href="about-us">About us</a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-item__link" href="contact">contact</a>
+                    <a class="menu-item__link" href="contact">Contact</a>
                 </li>
             </ul>
 
             <div class="slideshow">
-                <!-- TODO: pure js slideshow -->
-                Header content
+                <h1 class="slideshow__title">Welcome to DEFCON switzerland</h1>
+                <div class="slideshow__fade-out"></div>
+                <!-- show images of people and hacking topics here -->
+                <img
+                    src="images/header-images/group-in-bar.jpg"
+                    alt="beer on tuesday meeting"
+                    class="slideshow__image"
+                />
+                <img
+                    data-src="images/header-images/hash-days.jpg"
+                    alt="hash days event badge"
+                    class="slideshow__lazy-laod"
+                />
             </div>
         </header>
         <main>
