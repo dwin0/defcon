@@ -20,7 +20,8 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
+    height: calc(50px + 10px); /* 10px padding */
+    padding-top: 10px;
     background: #122c3a;
     border-bottom: 5px solid #a60000;
 }
