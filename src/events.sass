@@ -1,0 +1,83 @@
+// colors
+$event-line-color: #eeeeee
+$bot-event-bullet-color: #af0000
+$dojo-event-bullet-color: blue
+$event-bullet-border: #ffffff
+
+.events
+    font-family: Courier New, Courier, monospace
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+
+    // timeline
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 50%
+        border-left: 10px solid $event-line-color
+        transform: translateX(-50%)
+
+.event
+    margin: 100px 0
+    position: relative
+
+    &:nth-of-type(2n)
+        transform: translateX(50%)
+        padding-left: 60px
+
+        &::before
+            right: 100%
+            transform: translate(50%, -50%)
+
+    &:nth-of-type(2n - 1)
+        transform: translateX(-50%)
+        padding-right: 60px
+
+        &::before
+            left: 100%
+            transform: translate(-50%, -50%)
+
+    // timeline bullet
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        border: 7px solid $event-bullet-border
+        border-radius: 50%
+        width: 50px
+        height: 50px
+
+    &--bot::before
+        background: $bot-event-bullet-color
+
+    &--dojo::before
+        background: $dojo-event-bullet-color
+
+    &__date
+        font-size: 30px
+        font-weight: bold
+        margin-bottom: 5px
+
+    &__name
+        font-size: 25px
+        margin-bottom: 20px
+
+    &__location
+        font-size: 20px
+        display: flex
+        align-items: center
+
+        &::before
+            $icon-size: 20px
+            content: ''
+            display: inline-block
+            width: $icon-size
+            height: $icon-size
+            background: url(../icons/location.svg)
+            background-size: $icon-size $icon-size
+            background-repeat: no-repeat
+            padding-right: 10px

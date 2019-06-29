@@ -1,7 +1,0 @@
--   node.js ok on client?
-    -   node-sass: Translate sass to css (minified and easier to maintain -> variables / bem)
-    -   webpack + babel: Translate js (minified and translated for all browsers)
--   Should IE be supported?
-    -   less work if not (some css + js is not supported)
-    -   smaller bundle size
--   Twitter integration? newest tweets?

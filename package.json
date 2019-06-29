@@ -1,0 +1,20 @@
+{
+    "name": "defcon-website",
+    "version": "1.0.0",
+    "scripts": {
+        "style:compile": "sass --style=compressed src:public/css",
+        "style:watch": "sass --watch src:public/css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dwin94/defcon.git"
+    },
+    "author": "David Windler",
+    "bugs": {
+        "url": "https://github.com/dwin94/defcon/issues"
+    },
+    "homepage": "https://github.com/dwin94/defcon#readme",
+    "dependencies": {
+        "sass": "^1.22.1"
+    }
+}
