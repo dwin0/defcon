@@ -20,10 +20,10 @@ git clone git@github.com:dwin94/defcon.git
 npm install
 ```
 
-3. Compile sass into css
+3. Compile sass into css and bundle js
 
 ```bash
-npm run style:compile
+npm run build
 ```
 
 4. Copy content of public folder onto your server

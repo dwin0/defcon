@@ -2,9 +2,10 @@
     "name": "defcon-website",
     "version": "1.0.0",
     "scripts": {
-        "style:compile": "sass --style=compressed src/sass:public/css",
+        "build": "npm run style:build && npm run javascript:build",
+        "style:build": "sass --style=compressed src/sass:public/css",
         "style:watch": "sass --watch src/sass:public/css",
-        "javascript:compile": "webpack --mode=production",
+        "javascript:build": "webpack --mode=production",
         "javascript:watch": "webpack --mode=development --watch"
     },
     "repository": {
