@@ -1,8 +1,52 @@
 // colors
+$filter-circle-border-color: #000000
 $event-line-color: #eeeeee
 $bot-event-bullet-color: #af0000
-$dojo-event-bullet-color: blue
+$dojo-event-bullet-color: #1616b9
 $event-bullet-border: #ffffff
+
+body
+    font-family: Arial, Helvetica, sans-serif
+
+.filter
+    $icon-size: 30px
+
+    &__group
+        display: flex
+        justify-content: space-around
+        align-items: center
+        height: 50px
+        margin-bottom: 20px
+
+    &__checkbox
+        display: none
+
+    &__label
+        font-size: 20px
+        position: relative
+        padding-left: $icon-size + 10px
+        text-decoration: line-through
+
+        &::before
+            content: ''
+            display: block
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: $icon-size
+            height: $icon-size
+            border: 1px solid $filter-circle-border-color
+            border-radius: 50%
+
+    &__checkbox:checked + .filter__label
+        text-decoration: none
+
+    &__checkbox:checked + .filter__label::before
+        background: url(../icons/checkmark.svg)
+        background-size: $icon-size - 10px
+        background-position: 50% 50%
+        background-repeat: no-repeat
 
 .events
     font-family: Courier New, Courier, monospace
@@ -10,6 +54,7 @@ $event-bullet-border: #ffffff
     flex-direction: column
     align-items: center
     position: relative
+    min-height: 100vh
 
     // timeline
     &::before
