@@ -4,12 +4,30 @@ $event-line-color: #eeeeee
 $bot-event-bullet-color: #af0000
 $dojo-event-bullet-color: #1616b9
 $event-bullet-border: #ffffff
+$event-background-color: $event-line-color
+$button-border-color: #000000
+
+// font-sizes
+$title-font-size: 30px
+$subtitle-font-size: 25px
+$label-font-size: 20px
+$text-font-size: 18px
+
+// spacings
+$event-timeline-gap: 60px
+
+
 
 body
     font-family: Arial, Helvetica, sans-serif
 
 .filter
     $icon-size: 30px
+    text-align: center
+
+    &__title
+        font-size: $title-font-size
+        margin: 20px
 
     &__group
         display: flex
@@ -22,7 +40,7 @@ body
         display: none
 
     &__label
-        font-size: 20px
+        font-size: $label-font-size
         position: relative
         padding-left: $icon-size + 10px
         text-decoration: line-through
@@ -67,24 +85,24 @@ body
         transform: translateX(-50%)
 
 .event
-    margin: 100px 0
+    $event-padding-top: 60px
+    $event-padding-bottom: 60px
+    $event-padding-left: 30px
+    $event-padding-right: 30px
+
     position: relative
+    margin: 75px 0
+    width: 30vw
 
     &:nth-of-type(2n)
         transform: translateX(50%)
-        padding-left: 60px
-
-        &::before
-            right: 100%
-            transform: translate(50%, -50%)
+        padding: $event-padding-top $event-padding-right $event-padding-bottom #{$event-padding-left + $event-timeline-gap}
 
     &:nth-of-type(2n - 1)
         transform: translateX(-50%)
-        padding-right: 60px
+        padding: $event-padding-top #{$event-padding-right + $event-timeline-gap} $event-padding-bottom $event-padding-left
 
-        &::before
-            left: 100%
-            transform: translate(-50%, -50%)
+
 
     // timeline bullet
     &::before
@@ -96,23 +114,36 @@ body
         width: 50px
         height: 50px
 
+    &:nth-of-type(2n)::before
+        right: 100%
+        transform: translate(50%, -50%)
+
+    &:nth-of-type(2n - 1)::before
+        left: 100%
+        transform: translate(-50%, -50%)
+
+
+
+    // event types
     &--bot::before
         background: $bot-event-bullet-color
 
     &--dojo::before
         background: $dojo-event-bullet-color
 
+
+
     &__date
-        font-size: 30px
+        font-size: $title-font-size
         font-weight: bold
         margin-bottom: 5px
 
     &__name
-        font-size: 25px
+        font-size: $subtitle-font-size
         margin-bottom: 20px
 
     &__location
-        font-size: 20px
+        font-size: $label-font-size
         display: flex
         align-items: center
 
@@ -126,3 +157,66 @@ body
             background-size: $icon-size $icon-size
             background-repeat: no-repeat
             padding-right: 10px
+
+
+
+    /* ----- start background ----- */
+
+    &__outer-background,
+    &__inner-background
+        z-index: -1
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+    
+    &__outer-background
+        overflow: hidden
+
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            border-style: solid
+
+    &:nth-of-type(2n) .event__outer-background::after
+        right: calc(100% - 1px - #{$event-timeline-gap})
+        border-width: 25px 25px 25px 0
+        border-color: transparent $event-background-color transparent transparent
+
+    &:nth-of-type(2n - 1) .event__outer-background::after
+        left: calc(100% - 1px - #{$event-timeline-gap})
+        border-width: 25px 0 25px 25px
+        border-color: transparent transparent transparent $event-background-color
+
+    &__inner-background
+        background-color: $event-background-color
+        transform: skewY(-4deg)
+        transform-origin: top left
+
+    &:nth-of-type(2n) .event__inner-background
+        left: $event-timeline-gap
+
+    &:nth-of-type(2n - 1) .event__inner-background
+        right: $event-timeline-gap
+    
+    /* ----- end background ----- */
+
+
+
+    &__open-more-information
+        font-size: $label-font-size
+        width: 180px
+        height: 40px
+        margin: 40px 0 20px
+        background: transparent
+        border: 2px solid $button-border-color
+
+    &__more-information
+        display: block
+        font-size: $text-font-size
+        
+        &--hidden
+            display: none
