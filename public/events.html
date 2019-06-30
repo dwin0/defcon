@@ -6,18 +6,57 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/events.css" />
+        <link rel="stylesheet" href="css/styles.css" />
 
         <title>Defcons Events</title>
     </head>
     <noscript>
         <style>
-            body {
-                background: black; /* TODO: test on server */
+            .event__more-information--hidden {
+                display: block;
             }
         </style>
     </noscript>
     <body>
+        <header>
+            <ul class="menu">
+                <li class="menu-item menu-item--logo">
+                    <a href="index.html" class="menu-item__link">
+                        <img
+                            src="images/logo.png"
+                            alt="defcon switzerland logo"
+                            class="menu-item__logo"
+                        />
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item__link" href="events.html">Events</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item__link" href="about-us.html">About us</a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-item__link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <div class="slideshow">
+                <h1 class="slideshow__title">Welcome to DEFCON switzerland</h1>
+                <div class="slideshow__fade-out"></div>
+                <!-- show images of people and hacking topics here -->
+                <img
+                    src="images/header-images/group-in-bar.jpg"
+                    alt="beer on tuesday meeting"
+                    class="slideshow__image"
+                />
+                <img
+                    data-src="images/header-images/hash-days.jpg"
+                    alt="hash days event badge"
+                    class="slideshow__lazy-laod"
+                />
+            </div>
+        </header>
+
         <div class="filter-wrapper">
             <div class="filter">
                 <p class="filter__title">Location Filter</p>

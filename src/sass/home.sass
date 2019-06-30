@@ -1,0 +1,58 @@
+.topic
+    transform: skewY(-4deg)
+    padding: 100px 20px
+    text-align: center
+    min-height: 300px
+    display: flex
+    justify-content: center
+    align-items: center
+
+@media (min-width: 650px)
+    .topic
+        padding: 100px 50px
+
+.topic:nth-of-type(odd),
+.topic:nth-of-type(odd) + .stop-skew-effect
+    background: #122c3a
+    color: #deeaf6
+
+.topic:nth-of-type(even),
+.topic:nth-of-type(even) + .stop-skew-effect
+    background: #deeaf6
+    color: #122c3a
+
+.stop-skew-effect
+    width: 100%
+    height: calc(2vw * 4) // 4deg
+    margin-top: calc(-1vw * 4)
+
+.topic__inner
+    transform: skewY(4deg)
+
+.topic__text-wrapper
+    order: 1
+    margin: auto
+    line-height: 1.25
+
+@media (min-width: 650px)
+    .topic__text-wrapper
+        flex: 1 1 50%
+        order: 0
+
+.topic__title
+    font-size: 30px
+    font-weight: bold
+    margin-bottom: 20px
+
+.topic__text
+    max-width: 650px
+    margin: auto
+
+.topic__image-wrapper
+    flex: 1 1 50%
+
+.topic__image
+    max-width: 150px
+    height: auto
+    width: auto
+    margin: 50px
