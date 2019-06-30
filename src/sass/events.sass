@@ -52,6 +52,9 @@ body
     display: flex
     justify-content: space-around
 
+    @media #{$mq-phone}
+        flex-direction: column
+
 .filter
     $icon-size: 30px
     margin: 20px
