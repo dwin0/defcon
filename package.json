@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "scripts": {
         "build": "npm run style:build && npm run javascript:build",
-        "style:build": "sass --style=compressed src/sass:public/css",
-        "style:watch": "sass --watch src/sass:public/css",
+        "style:build": "sass --style=compressed src/sass/styles.sass public/css/styles.css",
+        "style:watch": "sass --watch src/sass/styles.sass public/css/styles.css",
         "javascript:build": "webpack --mode=production",
         "javascript:watch": "webpack --mode=development --watch"
     },
