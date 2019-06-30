@@ -18,46 +18,77 @@
         </style>
     </noscript>
     <body>
-        <div class="filter">
-            <p class="filter__title">Location Filter</p>
-            <ul class="filter__group">
-                <li>
-                    <input
-                        class="filter__checkbox filter__checkbox--location"
-                        type="checkbox"
-                        id="checkbox_bern"
-                        value="Bern"
-                        checked
-                    />
-                    <label class="filter__label" for="checkbox_bern">
-                        Bern
-                    </label>
-                </li>
-                <li>
-                    <input
-                        class="filter__checkbox filter__checkbox--location"
-                        type="checkbox"
-                        id="checkbox_zurich"
-                        value="Zurich"
-                        checked
-                    />
-                    <label class="filter__label" for="checkbox_zurich">
-                        Zurich
-                    </label>
-                </li>
-                <li>
-                    <input
-                        class="filter__checkbox filter__checkbox--location"
-                        type="checkbox"
-                        id="checkbox_chur"
-                        value="Chur"
-                        checked
-                    />
-                    <label class="filter__label" for="checkbox_chur">
-                        Chur
-                    </label>
-                </li>
-            </ul>
+        <div class="filter-wrapper">
+            <div class="filter">
+                <p class="filter__title">Location Filter</p>
+                <ul class="filter__group">
+                    <li>
+                        <input
+                            class="filter__checkbox filter__checkbox--location"
+                            type="checkbox"
+                            id="checkbox_bern"
+                            value="Bern"
+                            checked
+                        />
+                        <label class="filter__label" for="checkbox_bern">
+                            Bern
+                        </label>
+                    </li>
+                    <li>
+                        <input
+                            class="filter__checkbox filter__checkbox--location"
+                            type="checkbox"
+                            id="checkbox_zurich"
+                            value="Zurich"
+                            checked
+                        />
+                        <label class="filter__label" for="checkbox_zurich">
+                            Zurich
+                        </label>
+                    </li>
+                    <li>
+                        <input
+                            class="filter__checkbox filter__checkbox--location"
+                            type="checkbox"
+                            id="checkbox_chur"
+                            value="Chur"
+                            checked
+                        />
+                        <label class="filter__label" for="checkbox_chur">
+                            Chur
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="filter">
+                <p class="filter__title">Event filter</p>
+                <ul class="filter__group">
+                    <li>
+                        <input
+                            class="filter__checkbox filter__checkbox--event"
+                            type="checkbox"
+                            id="checkbox_bot"
+                            value="Beer on tuesday"
+                            checked
+                        />
+                        <label class="filter__label" for="checkbox_bot">
+                            Beer on tuesday
+                        </label>
+                    </li>
+                    <li>
+                        <input
+                            class="filter__checkbox filter__checkbox--event"
+                            type="checkbox"
+                            id="checkbox_dojo"
+                            value="Dojo"
+                            checked
+                        />
+                        <label class="filter__label" for="checkbox_dojo">
+                            Dojo
+                        </label>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <ul class="events">

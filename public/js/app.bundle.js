@@ -1,1 +1,100 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t){window.addEventListener("DOMContentLoaded",()=>{!function(){const e=document.getElementsByClassName("filter__checkbox--location");Array.from(e).forEach(e=>{e.addEventListener("change",e=>(function(e,t){const n=document.getElementsByClassName("event__location"),o=t?"block":"none";Array.from(n).forEach(t=>{t.textContent===e&&(t.parentNode.style.display=o)})})(e.target.value,e.target.checked))})}(),function(){const e=document.getElementsByClassName("event__open-more-information");Array.from(e).forEach(e=>e.addEventListener("click",()=>{const t=e.closest(".event"),n=t.querySelector(".event__more-information");n.classList.toggle("event__more-information--hidden")}))}()})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/events.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/events.js":
+/*!**************************!*\
+  !*** ./src/js/events.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("window.addEventListener(\"DOMContentLoaded\", () => {\n    const filter = {\n        hideLocations: {},\n        hideEvents: {}\n    };\n\n    addCheckboxListener(filter);\n    addToggleMoreInformationListener();\n});\n\nfunction addCheckboxListener(filter) {\n    const locationCheckboxes = document.getElementsByClassName(\n        \"filter__checkbox--location\"\n    );\n    const eventCheckboxes = document.getElementsByClassName(\n        \"filter__checkbox--event\"\n    );\n\n    Array.from(eventCheckboxes).forEach(checkbox =>\n        checkbox.addEventListener(\"click\", event => {\n            const eventName = event.target.value;\n            const hide = !event.target.checked;\n\n            filter.hideEvents[eventName] = hide;\n\n            toggleEvent(filter);\n        })\n    );\n\n    Array.from(locationCheckboxes).forEach(checkbox =>\n        checkbox.addEventListener(\"click\", event => {\n            const locationName = event.target.value;\n            const hide = !event.target.checked;\n\n            filter.hideLocations[locationName] = hide;\n\n            toggleEvent(filter);\n        })\n    );\n}\n\nfunction toggleEvent(filter) {\n    const eventElements = document.getElementsByClassName(\"event\");\n\n    Array.from(eventElements).forEach(event => {\n        eventName = event.querySelector(\".event__name\").textContent;\n        eventLocation = event.querySelector(\".event__location\").textContent;\n\n        const isHidden =\n            filter.hideEvents[eventName] || filter.hideLocations[eventLocation];\n\n        if (isHidden) {\n            event.style.display = \"none\";\n        } else {\n            event.style.display = \"block\";\n        }\n    });\n}\n\nfunction addToggleMoreInformationListener() {\n    const openMoreButtons = document.getElementsByClassName(\n        \"event__open-more-information\"\n    );\n    Array.from(openMoreButtons).forEach(button =>\n        button.addEventListener(\"click\", () => {\n            const event = button.closest(\".event\");\n            const moreInformation = event.querySelector(\n                \".event__more-information\"\n            );\n            moreInformation.classList.toggle(\"event__more-information--hidden\");\n        })\n    );\n}\n\n\n//# sourceURL=webpack:///./src/js/events.js?");
+
+/***/ })
+
+/******/ });

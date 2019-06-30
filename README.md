@@ -27,3 +27,8 @@ npm run build
 ```
 
 4. Copy content of public folder onto your server
+
+# Editing instructions
+
+-   Make sure the event name matches the exact event filter name in order to make the filter work
+-   Make sure the location name matches the exact location filter name in order to make the filter work

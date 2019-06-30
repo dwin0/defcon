@@ -7,11 +7,38 @@ $event-bullet-border: #ffffff
 $event-background-color: $event-line-color
 $button-border-color: #000000
 
+// media queries
+$mq-phone: 'only screen and (max-width: 767px)'
+$mq-tablet: 'only screen and (min-width: 768px)'
+
 // font-sizes
-$title-font-size: 30px
-$subtitle-font-size: 25px
-$label-font-size: 20px
-$text-font-size: 18px
+=title-font
+    @media #{$mq-phone}
+        font-size: 24px
+
+    @media #{$mq-tablet}
+        font-size: 30px
+    
+=subtitle-font
+    @media #{$mq-phone}
+        font-size: 20px
+
+    @media #{$mq-tablet}
+        font-size: 25px
+    
+=label-font
+    @media #{$mq-phone}
+        font-size: 18px
+
+    @media #{$mq-tablet}
+        font-size: 20px
+    
+=text-font
+    @media #{$mq-phone}
+        font-size: 16px
+
+    @media #{$mq-tablet}
+        font-size: 18px
 
 // spacings
 $event-timeline-gap: 60px
@@ -21,29 +48,33 @@ $event-timeline-gap: 60px
 body
     font-family: Arial, Helvetica, sans-serif
 
+.filter-wrapper
+    display: flex
+    justify-content: space-around
+
 .filter
     $icon-size: 30px
-    text-align: center
+    margin: 20px
 
     &__title
-        font-size: $title-font-size
-        margin: 20px
+        +title-font
+        margin: 20px 0
 
     &__group
         display: flex
-        justify-content: space-around
-        align-items: center
-        height: 50px
+        flex-direction: column
         margin-bottom: 20px
 
     &__checkbox
         display: none
 
     &__label
-        font-size: $label-font-size
+        +label-font
         position: relative
         padding-left: $icon-size + 10px
         text-decoration: line-through
+        display: block
+        margin: 20px 0
 
         &::before
             content: ''
@@ -84,23 +115,37 @@ body
         border-left: 10px solid $event-line-color
         transform: translateX(-50%)
 
+    @media #{$mq-phone}
+        transform: translateX(-40%)
+
 .event
-    $event-padding-top: 60px
-    $event-padding-bottom: 60px
-    $event-padding-left: 30px
-    $event-padding-right: 30px
+    $event-padding-top-desktop: 60px
+    $event-padding-bottom-desktop: 60px
+    $event-padding-left-desktop: 30px
+    $event-padding-right-desktop: 30px
+
+    $event-padding-top-mobile: 30px
+    $event-padding-bottom-mobile: 30px
+    $event-padding-left-mobile: 20px
+    $event-padding-right-mobile: 20px
 
     position: relative
-    margin: 75px 0
-    width: 30vw
+    
+    transform: translateX(50%)
 
-    &:nth-of-type(2n)
-        transform: translateX(50%)
-        padding: $event-padding-top $event-padding-right $event-padding-bottom #{$event-padding-left + $event-timeline-gap}
+    @media #{$mq-phone}
+        margin: 50px 0
+        width: 50%
+        padding: $event-padding-top-mobile $event-padding-right-mobile $event-padding-bottom-mobile #{$event-padding-left-mobile + $event-timeline-gap}
 
-    &:nth-of-type(2n - 1)
-        transform: translateX(-50%)
-        padding: $event-padding-top #{$event-padding-right + $event-timeline-gap} $event-padding-bottom $event-padding-left
+    @media #{$mq-tablet}
+        margin: 75px 0
+        width: 30vw
+        padding: $event-padding-top-desktop $event-padding-right-desktop $event-padding-bottom-desktop #{$event-padding-left-desktop + $event-timeline-gap}
+
+        &:nth-of-type(2n - 1)
+            transform: translateX(-50%)
+            padding: $event-padding-top-desktop #{$event-padding-right-desktop + $event-timeline-gap} $event-padding-bottom-desktop $event-padding-left-desktop
 
 
 
@@ -111,16 +156,22 @@ body
         top: 50%
         border: 7px solid $event-bullet-border
         border-radius: 50%
-        width: 50px
-        height: 50px
-
-    &:nth-of-type(2n)::before
         right: 100%
         transform: translate(50%, -50%)
 
-    &:nth-of-type(2n - 1)::before
-        left: 100%
-        transform: translate(-50%, -50%)
+        @media #{$mq-phone}
+            width: 30px
+            height: 30px
+
+        @media #{$mq-tablet}
+            width: 50px
+            height: 50px
+
+    @media #{$mq-tablet}
+        &:nth-of-type(2n - 1)::before
+            left: 100%
+            right: 0
+            transform: translate(-50%, -50%)
 
 
 
@@ -134,16 +185,16 @@ body
 
 
     &__date
-        font-size: $title-font-size
+        +title-font
         font-weight: bold
         margin-bottom: 5px
 
     &__name
-        font-size: $subtitle-font-size
+        +subtitle-font
         margin-bottom: 20px
 
     &__location
-        font-size: $label-font-size
+        +label-font
         display: flex
         align-items: center
 
@@ -181,42 +232,49 @@ body
             transform: translateY(-50%)
             border-style: solid
 
-    &:nth-of-type(2n) .event__outer-background::after
-        right: calc(100% - 1px - #{$event-timeline-gap})
-        border-width: 25px 25px 25px 0
-        border-color: transparent $event-background-color transparent transparent
+            right: calc(100% - 1px - #{$event-timeline-gap})
+            border-width: 25px 25px 25px 0
+            border-color: transparent $event-background-color transparent transparent
 
-    &:nth-of-type(2n - 1) .event__outer-background::after
-        left: calc(100% - 1px - #{$event-timeline-gap})
-        border-width: 25px 0 25px 25px
-        border-color: transparent transparent transparent $event-background-color
+    @media #{$mq-tablet}
+        &:nth-of-type(2n - 1) .event__outer-background::after
+            left: calc(100% - 1px - #{$event-timeline-gap})
+            right: 0
+            border-width: 25px 0 25px 25px
+            border-color: transparent transparent transparent $event-background-color
 
     &__inner-background
         background-color: $event-background-color
         transform: skewY(-4deg)
         transform-origin: top left
 
-    &:nth-of-type(2n) .event__inner-background
         left: $event-timeline-gap
 
-    &:nth-of-type(2n - 1) .event__inner-background
-        right: $event-timeline-gap
+    @media #{$mq-tablet}
+        &:nth-of-type(2n - 1) .event__inner-background
+            right: $event-timeline-gap
+            left: 0
     
     /* ----- end background ----- */
 
 
 
     &__open-more-information
-        font-size: $label-font-size
-        width: 180px
-        height: 40px
+        +label-font
         margin: 40px 0 20px
         background: transparent
         border: 2px solid $button-border-color
+        height: 40px
+
+        @media #{$mq-phone}
+            width: 100%
+
+        @media #{$mq-tablet}
+            width: 180px
 
     &__more-information
+        +text-font
         display: block
-        font-size: $text-font-size
         
         &--hidden
             display: none
