@@ -145,7 +145,6 @@ a {
 }
 .menu__item-link {
   font-size: 24px;
-  font-weight: bold;
   text-decoration: none;
   color: #ffffff;
 }
@@ -158,6 +157,7 @@ a {
 }
 @media only screen and (min-width: 768px) {
   .menu__item-link {
+    font-weight: bold;
     height: 100%;
     display: flex;
     align-items: center;
@@ -315,6 +315,7 @@ a {
 
 .filter {
   margin: 20px;
+  color: #ffffff;
 }
 .filter__title {
   margin: 20px 0;
@@ -363,7 +364,7 @@ a {
   transform: translateY(-50%);
   width: 30px;
   height: 30px;
-  border: 1px solid #000000;
+  border: 1px solid #ffffff;
   border-radius: 50%;
 }
 .filter__checkbox:checked + .filter__label {
@@ -380,9 +381,13 @@ a {
   font-family: Courier New, Courier, monospace;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   min-height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  .events {
+    align-items: center;
+  }
 }
 .events::before {
   content: "";
@@ -394,26 +399,25 @@ a {
   transform: translateX(-50%);
 }
 @media only screen and (max-width: 767px) {
-  .events {
-    transform: translateX(-40%);
+  .events::before {
+    left: 40px;
   }
 }
 
 .event {
   position: relative;
-  transform: translateX(50%);
   /* ----- start background ----- */
   /* ----- end background ----- */
 }
 @media only screen and (max-width: 767px) {
   .event {
-    margin: 50px 0;
-    width: 50%;
+    margin: 50px 40px;
     padding: 30px 20px 30px 80px;
   }
 }
 @media only screen and (min-width: 768px) {
   .event {
+    transform: translateX(50%);
     margin: 75px 0;
     width: 30vw;
     padding: 60px 30px 60px 90px;
