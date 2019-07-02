@@ -29,31 +29,77 @@ $header-height: 65px
 
 
 .hamburger-button
-    display: none
+    +menu-font
+    border: none
+    background: none
+    outline: none
+    align-items: center
+    color: $text-color-light
+    height: 100%
+
+    @media #{$mq-small}
+        display: flex
+        
+    @media #{$mq-medium-large}
+        display: none
+
+    &__icon-wrapper
+        width: 40px
+        min-width: 40px
+        margin: 0 15px
+
+    &__icon-line
+        display: block
+        height: 4px
+        width: 100%
+        border-radius: 4px
+        margin: 7px 0
+        background-color: $text-color-light
+        transition: transform 0.3s ease-in-out
+
+    &--open
+
+        .hamburger-button__icon-line--top
+            transform: translateY(11px) rotate(45deg)
+
+        .hamburger-button__icon-line--center
+            transform: scale(0)
+
+        .hamburger-button__icon-line--bottom
+            transform: translateY(-11px) rotate(-45deg)
 
 
 
 .menu
     display: flex
+    align-items: center
 
     @media #{$mq-small}
-        // position: fixed TODO:
-        // overflow: auto
-        // top: ${HEADER_HEIGHT}
-        // height: calc(100vh - ${HEADER_HEIGHT})
-        // width: 100%
-        // flex-direction: column
-        // align-items: center
-        // background: ${COLORS.WHITE}
-        // transform: ${props => (props.isVisible ? 'none' : 'translateX(100%)')}
-        // transition: transform 0.3s ease-out
+        position: fixed
+        flex-direction: column
+        overflow: auto // make menu scrollable if there are too many entries
+        top: $header-height
+        height: calc(100vh - #{$header-height})
+        width: 100%
+        background: $dark-blue
+        color: $text-color-light
+        transform: translateX(100%)
+        transition: transform 0.3s ease-out
+        padding: 30px 0
+
+        &--open
+            transform: none
 
     @media #{$mq-medium-large}
         height: 100%
-        align-items: center
 
     &__item
-        height: 100%
+        @media #{$mq-small}
+            width: 100%
+            text-align: center
+
+        @media #{$mq-medium-large}
+            height: 100%
 
     &__item-link
         +menu-font
@@ -61,16 +107,10 @@ $header-height: 65px
         text-decoration: none
         color: $text-color-light
 
-        // ${media.lessThan(BREAKPOINTS.MEDIUM_MINUS_ONE)`
-        //     width: 100%;
-        //     padding: 20px 0;
-        //     :first-of-type {
-        //     margin-top: 30px;
-        //     }
-        //     :last-of-type {
-        //     margin-bottom: 30px;
-        //     }
-        // `}
+        @media #{$mq-small}
+            display: block
+            width: 100%
+            padding: 20px 0
 
         @media #{$mq-medium-large}
             height: 100%
@@ -86,5 +126,5 @@ $header-height: 65px
             &:hover
                 background: $dark-red
 
-        &--active // TODO: add in html
+        &--active
             background: $dark-red
