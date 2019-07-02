@@ -12,6 +12,7 @@ $event-timeline-gap: 60px
 .filter
     $icon-size: 30px
     margin: 20px
+    color: $text-color-light
 
     &__title
         +title-font
@@ -42,7 +43,7 @@ $event-timeline-gap: 60px
             transform: translateY(-50%)
             width: $icon-size
             height: $icon-size
-            border: 1px solid $filter-circle-border-color
+            border: 1px solid $text-color-light
             border-radius: 50%
 
     &__checkbox:checked + .filter__label
@@ -54,13 +55,18 @@ $event-timeline-gap: 60px
         background-position: 50% 50%
         background-repeat: no-repeat
 
+
+$timeline-position-mobile: 40px
+
 .events
     font-family: Courier New, Courier, monospace
     display: flex
     flex-direction: column
-    align-items: center
     position: relative
     min-height: 100vh
+
+    @media #{$mq-medium-large}
+        align-items: center
 
     // timeline
     &::before
@@ -72,8 +78,8 @@ $event-timeline-gap: 60px
         border-left: 10px solid $event-line-color
         transform: translateX(-50%)
 
-    @media #{$mq-small}
-        transform: translateX(-40%)
+        @media #{$mq-small}
+            left: $timeline-position-mobile
 
 .event
     $event-padding-top-desktop: 60px
@@ -87,15 +93,13 @@ $event-timeline-gap: 60px
     $event-padding-right-mobile: 20px
 
     position: relative
-    
-    transform: translateX(50%)
 
     @media #{$mq-small}
-        margin: 50px 0
-        width: 50%
+        margin: 50px $timeline-position-mobile
         padding: $event-padding-top-mobile $event-padding-right-mobile $event-padding-bottom-mobile #{$event-padding-left-mobile + $event-timeline-gap}
 
     @media #{$mq-medium-large}
+        transform: translateX(50%)
         margin: 75px 0
         width: 30vw
         padding: $event-padding-top-desktop $event-padding-right-desktop $event-padding-bottom-desktop #{$event-padding-left-desktop + $event-timeline-gap}
