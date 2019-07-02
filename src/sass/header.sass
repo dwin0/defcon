@@ -1,83 +1,90 @@
-.menu
+$header-height: 65px
+
+
+
+.header
     position: fixed
+    top: 0
     z-index: 10
     width: 100%
+    height: $header-height
     display: flex
     align-items: center
-    background: #122c3a
-    border-bottom: 5px solid $menu-border-color
+    justify-content: space-between
+    background: $dark-blue
+    border-bottom: 5px solid $dark-red
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.1)
 
-    @media #{$mq-phone}
-        flex-direction: column
+    &__logo-link-wrapper
+        text-decoration: none
 
-    @media #{$mq-tablet}
-        justify-content: space-around
-        height: calc(50px + 10px) // 10px padding
-        padding-top: 10px
-
-.menu-item
-    padding: 10px
-
-.menu-item--logo
-    align-self: flex-start
-
-.menu-item__link
-    text-decoration: none
-    color: #ffffff
-    font-weight: bold
-
-.menu-item__link:hover
-    text-decoration: underline
-
-.menu-item__logo
-    max-width: 130px
-    align-self: auto
+    &__logo-img
+        padding-top: $header-height - 2px
+        margin-left: 5vw
+        @media #{$mq-small}
+            width: 130px
+        @media #{$mq-medium-large}
+            width: 160px
 
 
 
-.slideshow
-    position: relative
-    height: 50vw
-    max-height: 90vh
-    min-height: 350px
-    width: 100%
+.hamburger-button
+    display: none
 
-.slideshow__title
-    position: absolute
-    left: 0
-    width: 100%
-    text-align: center
-    padding: 0 10px
-    top: 50%
-    transform: translateY(-50%)
-    z-index: 1
-    font-size: 40px
-    color: #122c3a
 
-.slideshow__image
-    position: absolute
-    top: 0
-    left: 0
-    min-width: 100%
-    z-index: -1
-    min-height: 110% // due to skewY effect
 
-// shrink image on both sites if no space
-@supports (object-fit: cover)
-    .slideshow__image
-        width: 100%
-        object-fit: cover
-        object-position: 50% 50%
+.menu
+    display: flex
 
-.slideshow__fade-out
-    content: ""
-    position: absolute
-    top: 0
-    height: 110% // due to skewY effect
-    left: 0
-    width: 100%
-    background: rgba(255, 255, 255, 0.5)
-    z-index: 0
+    @media #{$mq-small}
+        // position: fixed TODO:
+        // overflow: auto
+        // top: ${HEADER_HEIGHT}
+        // height: calc(100vh - ${HEADER_HEIGHT})
+        // width: 100%
+        // flex-direction: column
+        // align-items: center
+        // background: ${COLORS.WHITE}
+        // transform: ${props => (props.isVisible ? 'none' : 'translateX(100%)')}
+        // transition: transform 0.3s ease-out
 
-.slideshow__lazy-laod
-    visibility: hidden
+    @media #{$mq-medium-large}
+        height: 100%
+        align-items: center
+
+    &__item
+        height: 100%
+
+    &__item-link
+        +menu-font
+        font-weight: bold
+        text-decoration: none
+        color: $text-color-light
+
+        // ${media.lessThan(BREAKPOINTS.MEDIUM_MINUS_ONE)`
+        //     width: 100%;
+        //     padding: 20px 0;
+        //     :first-of-type {
+        //     margin-top: 30px;
+        //     }
+        //     :last-of-type {
+        //     margin-bottom: 30px;
+        //     }
+        // `}
+
+        @media #{$mq-medium-large}
+            height: 100%
+            display: flex
+            align-items: center
+
+        @media #{$mq-medium}
+            padding: 0 6vw
+
+        @media #{$mq-large}
+            padding: 0 7vw
+
+            &:hover
+                background: $dark-red
+
+        &--active // TODO: add in html
+            background: $dark-red

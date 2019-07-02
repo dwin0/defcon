@@ -10,6 +10,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  background: #122c3a;
 }
 
 a {
@@ -30,49 +31,90 @@ a {
     align-items: center;
   }
 }
-.menu {
+.header {
   position: fixed;
+  top: 0;
   z-index: 10;
   width: 100%;
+  height: 65px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #122c3a;
   border-bottom: 5px solid #a60000;
+  box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.header__logo-link-wrapper {
+  text-decoration: none;
+}
+.header__logo-img {
+  padding-top: 63px;
+  margin-left: 5vw;
 }
 @media only screen and (max-width: 767px) {
-  .menu {
-    flex-direction: column;
+  .header__logo-img {
+    width: 130px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .menu {
-    justify-content: space-around;
-    height: calc(50px + 10px);
-    padding-top: 10px;
+  .header__logo-img {
+    width: 160px;
   }
 }
 
-.menu-item {
-  padding: 10px;
+.hamburger-button {
+  display: none;
 }
 
-.menu-item--logo {
-  align-self: flex-start;
+.menu {
+  display: flex;
 }
-
-.menu-item__link {
+@media only screen and (min-width: 768px) {
+  .menu {
+    height: 100%;
+    align-items: center;
+  }
+}
+.menu__item {
+  height: 100%;
+}
+.menu__item-link {
+  font-weight: bold;
   text-decoration: none;
   color: #ffffff;
-  font-weight: bold;
 }
-
-.menu-item__link:hover {
-  text-decoration: underline;
+@media only screen and (max-width: 767px) {
+  .menu__item-link {
+    font-size: 20px;
+  }
 }
-
-.menu-item__logo {
-  max-width: 130px;
-  align-self: auto;
+@media only screen and (min-width: 768px) {
+  .menu__item-link {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu__item-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .menu__item-link {
+    padding: 0 6vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .menu__item-link {
+    padding: 0 7vw;
+  }
+  .menu__item-link:hover {
+    background: #a60000;
+  }
+}
+.menu__item-link--active {
+  background: #a60000;
 }
 
 .slideshow {

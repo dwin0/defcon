@@ -10,31 +10,32 @@
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/styles.css" />
 
-        <title>Defcon Home</title>
+        <title>Defcon | Home</title>
     </head>
     <body>
-        <header>
+        <header class="header">
+            <a href="index.html" class="header__logo-link-wrapper">
+                <img
+                    src="images/logo.png"
+                    alt="defcon switzerland logo"
+                    class="header__logo-img"
+                />
+            </a>
+            <div class="hamburger-button">Hamburger Button</div>
             <ul class="menu">
-                <li class="menu-item menu-item--logo">
-                    <a href="index.html" class="menu-item__link">
-                        <img
-                            src="images/logo.png"
-                            alt="defcon switzerland logo"
-                            class="menu-item__logo"
-                        />
-                    </a>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="events.html">Events</a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-item__link" href="events.html">Events</a>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="about-us.html">About us</a>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-item__link" href="about-us.html">About us</a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-item__link" href="contact.html">Contact</a>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="contact.html">Contact</a>
                 </li>
             </ul>
+        </header>
 
+        <main>
             <div class="slideshow">
                 <h1 class="slideshow__title">Welcome to DEFCON switzerland</h1>
                 <div class="slideshow__fade-out"></div>
@@ -50,8 +51,7 @@
                     class="slideshow__lazy-laod"
                 />
             </div>
-        </header>
-        <main>
+
             <section class="topic">
                 <div class="topic__inner two-column-large-one-column-small">
                     <div class="topic__text-wrapper">
