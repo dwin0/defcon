@@ -25,6 +25,31 @@ function addHamburgerButtonListener() {
     hamburgerButton.addEventListener("click", () => {
         hamburgerButton.classList.toggle(hamburgerOpenClass);
         const wasOpened = menu.classList.toggle(menuOpenClass);
-        document.body.style.overflow = wasOpened ? "hidden" : "visible"; // prevent scroll
+
+        if (wasOpened) {
+            preventScrolling();
+        } else {
+            activateScrolling();
+        }
     });
+}
+
+function preventScrolling() {
+    document.body.style.overflow = "hidden";
+    listenOnPageResize();
+}
+
+function activateScrolling() {
+    document.body.style.overflow = "visible";
+    stopListeningOnPageResize();
+}
+
+function listenOnPageResize() {
+    window.addEventListener("resize", activateScrolling);
+    window.addEventListener("orientationchange", activateScrolling);
+}
+
+function stopListeningOnPageResize() {
+    window.removeEventListener("resize", activateScrolling);
+    window.removeEventListener("orientationchange", activateScrolling);
 }
