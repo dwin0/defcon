@@ -1,56 +1,54 @@
-.slideshow
+.image-gallery
+    width: 100%
     position: relative
     height: 50vw
-    max-height: 90vh
+    max-height: 700px
     min-height: 350px
-    width: 100%
+    overflow: hidden
 
-.slideshow__title
-    position: absolute
-    left: 0
-    width: 100%
-    text-align: center
-    padding: 0 10px
-    top: 50%
-    transform: translateY(-50%)
-    z-index: 1
-    font-size: 40px
-    color: #122c3a
-
-.slideshow__image
-    position: absolute
-    top: 0
-    left: 0
-    min-width: 100%
-    z-index: -1
-    min-height: 110% // due to skewY effect
-
-// shrink image on both sites if no space
-@supports (object-fit: cover)
-    .slideshow__image
+    // blur effect
+    &::after
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
         width: 100%
+        background: rgba(39, 39, 39, 0.7)
+
+    &__title
+        +banner-font
+        z-index: 1
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        width: 100%
+        text-align: center
+        color: $text-color-light
+
+        @media #{$mq-small}
+            padding: 0 5%
+
+        @media #{$mq-medium-large}
+            padding: 0 50px
+
+    &__image
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        height: 100%
         object-fit: cover
-        object-position: 50% 50%
 
-.slideshow__fade-out
-    content: ""
-    position: absolute
-    top: 0
-    height: 110% // due to skewY effect
-    left: 0
-    width: 100%
-    background: rgba(255, 255, 255, 0.5)
-    z-index: 0
 
-.slideshow__lazy-laod
-    visibility: hidden
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
 .topic
     transform: skewY(-4deg)
     padding: 100px 20px
