@@ -1,7 +1,11 @@
 const path = require("path");
 
 module.exports = {
-    entry: ["./src/js/navigation.js", "./src/js/events.js"],
+    entry: [
+        "./src/js/navigation.js",
+        "./src/js/image-gallery.js",
+        "./src/js/events.js"
+    ],
     output: {
         path: path.join(__dirname, "public/js"),
         filename: "app.bundle.js"
