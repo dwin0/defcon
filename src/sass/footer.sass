@@ -1,0 +1,37 @@
+.footer
+    +text-font
+    width: 100%
+    text-align: center
+    color: $text-color-light
+    background: $dark-blue
+    border-top: 5px solid $dark-red
+
+    @media #{$mq-small}
+        padding: 30px $side-spacing-small
+    @media #{$mq-medium}
+        padding: 30px $side-spacing-medium
+    @media #{$mq-large}
+        padding: 30px $side-spacing-large
+
+    &__address
+        display: flex
+        margin: 20px 0
+
+        @media #{$mq-small}
+            flex-direction: column
+
+        @media #{$mq-medium-large}
+            flex-direction: row
+            justify-content: center
+
+    &__address-element
+        @media #{$mq-small}
+            margin-bottom: 10px
+
+    &__address-element:not(:last-of-type)::after
+        @media #{$mq-medium-large}
+            content: '|'
+            padding: 0 10px
+
+
+// font
