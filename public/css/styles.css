@@ -192,6 +192,10 @@ a {
   background: #a60000;
 }
 
+.header-wrapper {
+  position: relative;
+}
+
 .image-gallery {
   width: 100%;
   position: relative;
@@ -257,6 +261,77 @@ a {
   transition: opacity 1s;
 }
 
+.social-media {
+  position: relative;
+  display: flex;
+  height: 0;
+  overflow: visible;
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: 9;
+}
+@media only screen and (max-width: 767px) {
+  .social-media {
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .social-media {
+    justify-content: flex-end;
+    right: 6vw;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .social-media {
+    justify-content: flex-end;
+    right: 7vw;
+  }
+}
+.social-media__link {
+  border-style: solid;
+  border-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #122c3a;
+}
+@media only screen and (max-width: 767px) {
+  .social-media__link {
+    border-width: 3px;
+    width: 45px;
+    height: 45px;
+    transform: translateY(-50%);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .social-media__link {
+    border-width: 4px;
+    width: 60px;
+    height: 60px;
+    margin-left: 40px;
+    transform: translateY(-35%);
+  }
+}
+.social-media__link:hover {
+  background: #a60000;
+}
+.social-media__icon {
+  padding: 5px;
+  transform: rotate(4deg);
+}
+@media only screen and (max-width: 767px) {
+  .social-media__icon {
+    width: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .social-media__icon {
+    width: 40px;
+  }
+}
+
 .topic {
   position: relative;
   display: flex;
@@ -267,18 +342,18 @@ a {
 }
 @media only screen and (max-width: 767px) {
   .topic {
-    padding: 50px 25px 100px;
+    padding: 75px 25px 100px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .topic {
-    padding: 50px 6vw 150px;
+    padding: 75px 6vw 150px;
     min-height: 500px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .topic {
-    padding: 70px 7vw 170px;
+    padding: 80px 7vw 170px;
     min-height: 500px;
   }
 }

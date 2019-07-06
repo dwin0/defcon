@@ -1,3 +1,8 @@
+.header-wrapper
+    position: relative
+
+
+
 .image-gallery
     width: 100%
     position: relative
@@ -51,6 +56,64 @@
 
 
 
+.social-media
+    position: relative
+    display: flex
+    height: 0
+    overflow: visible
+    transform: skewY($skew-degree)
+    transform-origin: top left
+    z-index: 9
+
+    @media #{$mq-small}
+        justify-content: space-between
+        padding: 0 $side-spacing-small
+
+    @media #{$mq-medium}
+        justify-content: flex-end
+        right: $side-spacing-medium
+
+    @media #{$mq-large}
+        justify-content: flex-end
+        right: $side-spacing-large
+
+    &__link
+        border-style: solid
+        border-color: $text-color-light
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        background: $dark-blue
+
+        @media #{$mq-small}
+            border-width: 3px
+            width: 45px
+            height: 45px
+            transform: translateY(-50%)
+
+        @media #{$mq-medium-large}
+            border-width: 4px
+            width: 60px
+            height: 60px
+            margin-left: 40px
+            transform: translateY(-35%)
+
+        &:hover
+            background: $dark-red
+
+    &__icon
+        padding: 5px
+        transform: rotate(4deg)
+
+        @media #{$mq-small}
+            width: 30px
+
+        @media #{$mq-medium-large}
+            width: 40px
+
+
+
 .topic
     position: relative
     display: flex
@@ -60,14 +123,14 @@
     z-index: 1
 
     @media #{$mq-small}
-        padding: 50px $side-spacing-small 100px
+        padding: 75px $side-spacing-small 100px
 
     @media #{$mq-medium}
-        padding: 50px $side-spacing-medium 150px
+        padding: 75px $side-spacing-medium 150px
         min-height: 500px
 
     @media #{$mq-large}
-        padding: 70px $side-spacing-large 170px
+        padding: 80px $side-spacing-large 170px
         min-height: 500px
 
     &::after // background
@@ -78,7 +141,7 @@
         left: 0
         width: 100%
         height: 100%
-        transform: skewY(-4deg)
+        transform: skewY($skew-degree)
         transform-origin: top left
 
     &:nth-of-type(odd)
