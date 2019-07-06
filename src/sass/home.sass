@@ -51,66 +51,72 @@
 
 
 
-
-
-
-
-
 .topic
-    transform: skewY(-4deg)
-    padding: 100px 20px
-    text-align: center
-    min-height: 300px
+    position: relative
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
+    z-index: 1
 
-@media (min-width: 650px)
-    .topic
-        padding: 100px 50px
+    @media #{$mq-small}
+        padding: 50px $side-spacing-small 100px
 
-.topic:nth-of-type(odd),
-.topic:nth-of-type(odd) + .stop-skew-effect
-    background: #122c3a
-    color: #deeaf6
+    @media #{$mq-medium}
+        padding: 50px $side-spacing-medium 150px
+        min-height: 500px
 
-.topic:nth-of-type(even),
-.topic:nth-of-type(even) + .stop-skew-effect
-    background: #deeaf6
-    color: #122c3a
+    @media #{$mq-large}
+        padding: 70px $side-spacing-large 170px
+        min-height: 500px
 
-.stop-skew-effect
-    width: 100%
-    height: calc(2vw * 4) // 4deg
-    margin-top: calc(-1vw * 4)
+    &::after // background
+        content: ''
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transform: skewY(-4deg)
+        transform-origin: top left
 
-.topic__inner
-    transform: skewY(4deg)
+    &:nth-of-type(odd)
+        color: $light-blue
+        background: $dark-blue
 
-.topic__text-wrapper
-    order: 1
-    margin: auto
-    line-height: 1.25
+        &::after
+            background: $dark-blue
 
-@media (min-width: 650px)
-    .topic__text-wrapper
-        flex: 1 1 50%
-        order: 0
+    &:nth-of-type(even)
+        color: $dark-blue
+        background: $light-blue
 
-.topic__title
-    font-size: 30px
-    font-weight: bold
-    margin-bottom: 20px
+        &::after
+            background: $light-blue
 
-.topic__text
-    max-width: 650px
-    margin: auto
+    &__text-wrapper
+        +text-font
+        display: flex
+        flex-direction: column
+        align-items: center
+        max-width: 650px
+        line-height: 1.3
 
-.topic__image-wrapper
-    flex: 1 1 50%
+    &__title
+        +title-font
 
-.topic__image
-    max-width: 150px
-    height: auto
-    width: auto
-    margin: 50px
+        @media #{$mq-small-medium}
+            margin-bottom: 20px
+
+        @media #{$mq-large}
+            margin-bottom: 30px
+
+    &__image
+        @media #{$mq-small}
+            max-width: 150px
+            margin-top: 40px
+
+        @media #{$mq-medium-large}
+            max-width: 175px
+            margin-top: 50px

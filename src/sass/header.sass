@@ -16,11 +16,15 @@
 
     &__logo-img
         padding-top: $header-height - 2px
-        margin-left: 5vw
         @media #{$mq-small}
             width: 130px
+            margin-left: $side-spacing-small
         @media #{$mq-medium-large}
             width: 160px
+        @media #{$mq-medium}
+            margin-left: $side-spacing-medium
+        @media #{$mq-large}
+            margin-left: $side-spacing-large
 
 
 
@@ -32,6 +36,7 @@
     align-items: center
     color: $text-color-light
     height: 100%
+    padding-right: $side-spacing-small
 
     @media #{$mq-small}
         display: flex
@@ -42,7 +47,7 @@
     &__icon-wrapper
         width: 40px
         min-width: 40px
-        margin: 0 15px
+        margin: 0 0 0 15px
 
     &__icon-line
         display: block
@@ -114,10 +119,10 @@
             align-items: center
 
         @media #{$mq-medium}
-            padding: 0 6vw
+            padding: 0 $side-spacing-medium
 
         @media #{$mq-large}
-            padding: 0 7vw
+            padding: 0 $side-spacing-large
 
             &:hover
                 background: $dark-red
