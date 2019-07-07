@@ -274,7 +274,7 @@ a {
   transform-origin: top left;
 }
 .topic:nth-of-type(odd) {
-  color: #deeaf6;
+  color: #ffffff;
   background: #122c3a;
 }
 .topic:nth-of-type(odd)::after {
