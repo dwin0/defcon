@@ -4,7 +4,149 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Defcons | About us</title>
+
+        <!-- TODO: favicon -->
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <title>Defcon | About us</title>
     </head>
-    <body></body>
+    <body>
+        <header class="header">
+            <a href="index.html" class="header__logo-link-wrapper">
+                <img
+                    src="images/logo.png"
+                    alt="defcon switzerland logo"
+                    class="header__logo-img"
+                />
+            </a>
+            <button class="hamburger-button">
+                Menu
+                <div class="hamburger-button__icon-wrapper">
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--top"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--center"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--bottom"
+                    ></span>
+                </div>
+            </button>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a class="menu__item-link" href="events.html">Events</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item-link menu__item-link--active" href="about-us.html">About us</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </header>
+
+        <main>
+            <section class="topic">
+                <div class="topic__text-wrapper">
+                    <h1 class="topic__title">Who we are</h1>
+                    <p>
+                        DC4131 is a local DEFCON Group and is organized as an
+                        association according to Swiss law. We are well-known
+                        for the Area41 conference (formerly hashdays) and
+                        regular member-events such as our Beer on Tuesday.
+                        DC4131 strives to support and foster the local hacker
+                        community.
+                        <br /><br />
+                        If you ask yourself, what DC4131 means: DC stands for
+                        DefCon, 41 is the area code for Switzerland and 31 is
+                        the area code for Berne, the capital of Switzerland.
+                    </p>
+                </div>
+            </section>
+
+            <section class="topic">
+                <div class="topic__text-wrapper">
+                    <h2 class="topic__title">Our Board Members</h2>
+                    <ul class="topic__list">
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Adrian Leuenberger</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@adrian-leuenberger</a>
+                            </p>
+                            <span>President</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Stefan Friedli</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@stefan-friedli</a>
+                            </p>
+                            <span>Vice president</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Candid Wüest</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@candid-wueest</a>
+                            </p>
+                            <span>Member of the board</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Daniel Brunner</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@daniel-brunner</a>
+                            </p>
+                            <span>Member of the board</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Domenico Salvati</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@domenico-salvati</a>
+                            </p>
+                            <span>Member of the board</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Andrea Hauser</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@andrea-hauser</a>
+                            </p>
+                            <span>Member of the board</span>
+                        </li>
+                        <li class="board-member">
+                            <p class="board-member__name-wrapper">
+                                <span class="board-member__name">Thomas Houiellebecq</span>
+                                <a href="https://twitter.com/defconCH" class="board-member__twitter-name">@thomas-houiellebecq</a>
+                            </p>
+                            <span>Member of the board</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="topic">
+                <div class="topic__text-wrapper">
+                    <h2 class="topic__title">Statutes</h2>
+                    <a href="downloads/20160421-DEFCON-Switzerland-Statutes.pdf" target="_blank" class="download">
+                        <img class="download__icon" src="icons/pdf.svg" alt="pdf icon" />
+                        <span class="download__name">DEFCON Switzerland statutes</span>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; DC4131</p>
+            <address class="footer__address">
+                <span class="footer__address-element">DEFCON Switzerland</span>
+                <span class="footer__address-element">8000 Zurich</span>
+                <span class="footer__address-element">Switzerland</span>
+            </address>
+            <a href="mailto:board@defcon-switzerland.org"
+                >board@defcon-switzerland.org</a
+            >
+        </footer>
+
+        <script src="js/app.bundle.js"></script>
+    </body>
 </html>

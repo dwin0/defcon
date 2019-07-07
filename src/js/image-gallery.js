@@ -1,12 +1,20 @@
 const imageVisibleClass = "image-gallery__image--visible";
 
 window.addEventListener("load", () => {
+    if(!hasImageGallery()) {
+        return
+    }
+
     const galleryImages = [];
 
     getInitialImage(galleryImages);
     lazyLoadImages(galleryImages);
     activateGallery(galleryImages);
 });
+
+function hasImageGallery() {
+    return document.getElementsByClassName('image-gallery').length
+}
 
 function getInitialImage(galleryImages) {
     const initialImages = document.querySelectorAll(

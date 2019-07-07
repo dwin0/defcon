@@ -1,0 +1,57 @@
+.board-member
+    @media #{$mq-small}
+        margin-bottom: 30px
+
+    @media #{$mq-medium-large}
+        margin-bottom: 50px
+
+    &__name-wrapper
+        display: flex
+
+        @media #{$mq-small}
+            flex-direction: column
+
+    &__name
+        +text-font-large
+
+        @media #{$mq-small}
+            padding-bottom: 5px
+
+    &__twitter-name
+        display: flex
+        align-items: center
+
+        @media #{$mq-small}
+            padding-bottom: 5px
+
+        @media #{$mq-medium-large}
+            padding-left: 20px
+
+        &::before
+            content: ''
+            display: inline-block
+            width: 20px
+            height: 20px
+            padding-right: 3px
+            background: url(../icons/twitter--dark-blue.svg)
+            background-repeat: no-repeat
+
+.download
+    display: flex
+    align-items: center
+
+    @media #{$mq-small}
+        flex-direction: column
+
+    &__name
+        white-space: nowrap
+
+    &__icon
+        width: 50px
+        height: auto
+
+        @media #{$mq-small}
+            margin-bottom: 10px
+
+        @media #{$mq-medium-large}
+            margin-right: 20px
