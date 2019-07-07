@@ -24,14 +24,11 @@
             flex-direction: row
             justify-content: center
 
-    &__address-element
+    &__address-element:not(:last-of-type)
         @media #{$mq-small}
-            margin-bottom: 10px
+            margin-bottom: 5px
 
-    &__address-element:not(:last-of-type)::after
-        @media #{$mq-medium-large}
-            content: '|'
-            padding: 0 10px
-
-
-// font
+        &::after
+            @media #{$mq-medium-large}
+                content: '|'
+                padding: 0 10px
