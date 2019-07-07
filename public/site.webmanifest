@@ -1,6 +1,8 @@
 {
     "name": "DefCon4131",
     "short_name": "DC4131",
+    "description": "Website of DefCon4131",
+    "start_url": ".",
     "icons": [
         {
             "src": "favicons/android-chrome-192x192.png",
