@@ -1,0 +1,23 @@
+.not-found
+    text-align: center
+    color: $text-color-light
+    display: flex
+    flex-direction: column
+
+    @media #{$mq-small}
+        padding: 10vh $side-spacing-small
+
+    @media #{$mq-medium}
+        padding: 200px $side-spacing-medium
+
+    @media #{$mq-large}
+        padding: 200px $side-spacing-large
+
+    &__title
+        +title-font
+        margin: 20px 0
+
+    &__info
+        +text-font
+        line-height: 1.5
+        margin: 20px 0

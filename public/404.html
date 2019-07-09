@@ -4,7 +4,99 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Defcon | 404 Not Found :(</title>
+        <meta name="msapplication-TileColor" content="#122c3a" />
+        <meta name="theme-color" content="#122c3a" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicons/favicon-16x16.png"
+        />
+        <link
+            rel="mask-icon"
+            href="favicons/safari-pinned-tab.svg"
+            color="#122c3a"
+        />
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <title>Defcon | 404 - Not Found :(</title>
     </head>
-    <body></body>
+    <body>
+        <header class="header">
+            <a href="index.html" class="header__logo-link-wrapper">
+                <img
+                    src="images/logo.png"
+                    alt="defcon switzerland logo"
+                    class="header__logo-img"
+                />
+            </a>
+            <button class="hamburger-button">
+                Menu
+                <div class="hamburger-button__icon-wrapper">
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--top"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--center"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--bottom"
+                    ></span>
+                </div>
+            </button>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a class="menu__item-link" href="events.html">Events</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="about-us.html">About us</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </header>
+
+        <main>
+            <p class="not-found">
+                <span class="not-found__title">404 - Not found :(</span>
+                <span class="not-found__info"
+                    >Do you have ideas for more content? Please write us an
+                    email:
+                    <a href="mailto:board@defcon-switzerland.org">
+                        board@defcon-switzerland.org
+                    </a>
+                </span>
+            </p>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; DC4131</p>
+            <address class="footer__address">
+                <span class="footer__address-element">DEFCON Switzerland</span>
+                <span class="footer__address-element">8000 Zurich</span>
+                <span class="footer__address-element">Switzerland</span>
+            </address>
+            <a href="mailto:board@defcon-switzerland.org"
+                >board@defcon-switzerland.org</a
+            >
+        </footer>
+
+        <script src="js/app.bundle.js"></script>
+    </body>
 </html>
