@@ -62,15 +62,16 @@
         text-decoration: none
 
     &__checkbox:checked + .filter__label::before
-        background: url(../icons/checkmark.svg)
-        background-size: $icon-size - 10px
-        background-position: 50% 50%
-        background-repeat: no-repeat
+            background: url(../icons/checkmark.svg)
+            background-size: $icon-size - 10px
+            background-position: 50% 50%
+            background-repeat: no-repeat
 
 
 
 .events
     font-family: Courier New, Courier, monospace
+    color: $text-color-dark
     display: flex
     flex-direction: column
     position: relative
@@ -100,22 +101,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .event
-    $event-padding-top-desktop: 60px
-    $event-padding-bottom-desktop: 60px
-    $event-padding-left-desktop: 30px
-    $event-padding-right-desktop: 30px
-
     position: relative
 
     @media #{$mq-small}
@@ -124,14 +110,23 @@
         max-width: 500px
 
     @media #{$mq-medium-large}
+        margin: 40px 0
         transform: translateX(50%)
-        margin: 75px 0
-        width: 30vw
-        padding: $event-padding-top-desktop $event-padding-right-desktop $event-padding-bottom-desktop #{$event-padding-left-desktop + $event-timeline-gap-desktop}
+        padding: $event-vertical-padding-desktop $event-horizontal-padding-desktop
 
+        &:nth-of-type(2n)
+            padding-left: $event-timeline-gap-desktop + $event-horizontal-padding-desktop
+
+        // move every second event to the left
         &:nth-of-type(2n - 1)
             transform: translateX(-50%)
-            padding: $event-padding-top-desktop #{$event-padding-right-desktop + $event-timeline-gap-desktop} $event-padding-bottom-desktop $event-padding-left-desktop
+            padding-right: $event-timeline-gap-desktop + $event-horizontal-padding-desktop
+
+    @media #{$mq-medium}
+        width: 45%
+
+    @media #{$mq-large}
+        width: 500px
 
     // timeline bullet
     &::before
@@ -150,9 +145,9 @@
             border-width: 3px
 
         @media #{$mq-medium-large}
-            width: 50px
-            height: 50px
-            border-width: 7px
+            width: 45px
+            height: 45px
+            border-width: 6px
 
     // move every second event to the left
     @media #{$mq-medium-large}
@@ -194,6 +189,7 @@
 
     &__open-more-information
         +text-font
+        font-family: Courier New, Courier, monospace
         background: transparent
         border: 2px solid $text-color-dark
         height: 40px
@@ -213,10 +209,6 @@
         
         &--hidden
             display: none
-
-
-
-    /* ----- start background ----- */
 
     &__outer-background,
     &__inner-background
@@ -246,6 +238,7 @@
                 right: calc(100% - 1px - #{$event-timeline-gap-desktop})
 
     @media #{$mq-medium-large}
+        // move every second event to the left
         &:nth-of-type(2n - 1) .event__outer-background::after
             left: calc(100% - 1px - #{$event-timeline-gap-desktop})
             right: 0
@@ -264,12 +257,7 @@
             left: $event-timeline-gap-desktop
 
     @media #{$mq-medium-large}
+        // move every second event to the left
         &:nth-of-type(2n - 1) .event__inner-background
             right: $event-timeline-gap-desktop
             left: 0
-    
-    /* ----- end background ----- */
-
-
-
-

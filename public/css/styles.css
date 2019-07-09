@@ -589,6 +589,7 @@ a {
 
 .events {
   font-family: Courier New, Courier, monospace;
+  color: #333333;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -627,8 +628,6 @@ a {
 
 .event {
   position: relative;
-  /* ----- start background ----- */
-  /* ----- end background ----- */
 }
 @media only screen and (max-width: 767px) {
   .event {
@@ -639,14 +638,26 @@ a {
 }
 @media only screen and (min-width: 768px) {
   .event {
+    margin: 40px 0;
     transform: translateX(50%);
-    margin: 75px 0;
-    width: 30vw;
-    padding: 60px 30px 60px 90px;
+    padding: 35px 20px;
+  }
+  .event:nth-of-type(2n) {
+    padding-left: 80px;
   }
   .event:nth-of-type(2n - 1) {
     transform: translateX(-50%);
-    padding: 60px 90px 60px 30px;
+    padding-right: 80px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .event {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .event {
+    width: 500px;
   }
 }
 .event::before {
@@ -668,9 +679,9 @@ a {
 }
 @media only screen and (min-width: 768px) {
   .event::before {
-    width: 50px;
-    height: 50px;
-    border-width: 7px;
+    width: 45px;
+    height: 45px;
+    border-width: 6px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -684,7 +695,7 @@ a {
   background: #a60000;
 }
 .event--dojo::before {
-  background: #e2d211;
+  background: #c7b800;
 }
 .event__date {
   font-weight: bold;
@@ -738,6 +749,7 @@ a {
   padding-right: 10px;
 }
 .event__open-more-information {
+  font-family: Courier New, Courier, monospace;
   background: transparent;
   border: 2px solid #333333;
   height: 40px;
