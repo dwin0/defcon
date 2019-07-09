@@ -1,27 +1,39 @@
-$event-timeline-gap: 60px
-
-
-
 .filter-wrapper
     display: flex
-    justify-content: space-around
 
     @media #{$mq-small}
         flex-direction: column
+        padding: 30px $side-spacing-small 0
+
+    @media #{$mq-medium-large}
+        justify-content: center
+
+    @media #{$mq-medium}
+        padding: 100px $side-spacing-medium 0
+
+    @media #{$mq-large}
+        padding: 100px $side-spacing-large 0
 
 .filter
     $icon-size: 30px
-    margin: 20px
     color: $text-color-light
 
+    @media #{$mq-small}
+        margin-top: 30px
+
+    @media #{$mq-medium}
+        margin: 0 50px
+
+    @media #{$mq-large}
+        margin: 0 100px
+
     &__title
-        +title-font
-        margin: 20px 0
+        +text-font-large
+        margin-bottom: 10px
 
     &__group
         display: flex
         flex-direction: column
-        margin-bottom: 20px
 
     &__checkbox
         display: none
@@ -29,7 +41,7 @@ $event-timeline-gap: 60px
     &__label
         +text-font
         position: relative
-        padding-left: $icon-size + 10px
+        padding-left: $icon-size + 15px
         text-decoration: line-through
         display: block
         margin: 20px 0
@@ -56,7 +68,6 @@ $event-timeline-gap: 60px
         background-repeat: no-repeat
 
 
-$timeline-position-mobile: 40px
 
 .events
     font-family: Courier New, Courier, monospace
@@ -65,8 +76,12 @@ $timeline-position-mobile: 40px
     position: relative
     min-height: 100vh
 
+    @media #{$mq-small}
+        margin-top: 30px
+
     @media #{$mq-medium-large}
         align-items: center
+        margin-top: 75px
 
     // timeline
     &::before
@@ -74,12 +89,26 @@ $timeline-position-mobile: 40px
         position: absolute
         top: 0
         bottom: 0
-        left: 50%
-        border-left: 10px solid $event-line-color
-        transform: translateX(-50%)
+        width: $timeline-width
+        background: $event-line-color
 
         @media #{$mq-small}
-            left: $timeline-position-mobile
+            left: $timeline-left-position-mobile
+        @media #{$mq-medium-large}
+            left: 50%
+            transform: translateX(-50%)
+
+
+
+
+
+
+
+
+
+
+
+
 
 .event
     $event-padding-top-desktop: 60px
@@ -87,75 +116,68 @@ $timeline-position-mobile: 40px
     $event-padding-left-desktop: 30px
     $event-padding-right-desktop: 30px
 
-    $event-padding-top-mobile: 30px
-    $event-padding-bottom-mobile: 30px
-    $event-padding-left-mobile: 20px
-    $event-padding-right-mobile: 20px
-
     position: relative
 
     @media #{$mq-small}
-        margin: 50px $timeline-position-mobile
-        padding: $event-padding-top-mobile $event-padding-right-mobile $event-padding-bottom-mobile #{$event-padding-left-mobile + $event-timeline-gap}
+        margin: 25px $side-spacing-small 25px $timeline-left-position-mobile + $timeline-width / 2
+        padding: 10px 10px 9vw $event-timeline-gap-mobile + 10px
+        max-width: 500px
 
     @media #{$mq-medium-large}
         transform: translateX(50%)
         margin: 75px 0
         width: 30vw
-        padding: $event-padding-top-desktop $event-padding-right-desktop $event-padding-bottom-desktop #{$event-padding-left-desktop + $event-timeline-gap}
+        padding: $event-padding-top-desktop $event-padding-right-desktop $event-padding-bottom-desktop #{$event-padding-left-desktop + $event-timeline-gap-desktop}
 
         &:nth-of-type(2n - 1)
             transform: translateX(-50%)
-            padding: $event-padding-top-desktop #{$event-padding-right-desktop + $event-timeline-gap} $event-padding-bottom-desktop $event-padding-left-desktop
-
-
+            padding: $event-padding-top-desktop #{$event-padding-right-desktop + $event-timeline-gap-desktop} $event-padding-bottom-desktop $event-padding-left-desktop
 
     // timeline bullet
     &::before
         content: ''
         position: absolute
         top: 50%
-        border: 7px solid $event-bullet-border
-        border-radius: 50%
         right: 100%
         transform: translate(50%, -50%)
+        border-style: solid
+        border-color: $event-bullet-border
+        border-radius: 50%
 
         @media #{$mq-small}
-            width: 30px
-            height: 30px
+            width: 22px
+            height: 22px
+            border-width: 3px
 
         @media #{$mq-medium-large}
             width: 50px
             height: 50px
+            border-width: 7px
 
+    // move every second event to the left
     @media #{$mq-medium-large}
         &:nth-of-type(2n - 1)::before
             left: 100%
             right: 0
             transform: translate(-50%, -50%)
 
-
-
     // event types
     &--bot::before
-        background: $bot-event-bullet-color
+        background: $dark-red
 
     &--dojo::before
-        background: $dojo-event-bullet-color
-
-
+        background: $dark-yellow
 
     &__date
         +title-font
-        font-weight: bold
-        margin-bottom: 5px
+        margin: 6px 0
 
     &__name
         +subtitle-font
-        margin-bottom: 20px
+        margin-bottom: 12px
 
     &__location
-        +text-font
+        +subtitle-font
         display: flex
         align-items: center
 
@@ -170,6 +192,28 @@ $timeline-position-mobile: 40px
             background-repeat: no-repeat
             padding-right: 10px
 
+    &__open-more-information
+        +text-font
+        background: transparent
+        border: 2px solid $text-color-dark
+        height: 40px
+
+        @media #{$mq-small}
+            width: 100%
+            margin: 25px 0 0
+
+        @media #{$mq-medium-large}
+            width: 180px
+            margin: 40px 0 20px
+
+    &__more-information
+        +text-font
+        display: block
+        margin: 10px 0
+        
+        &--hidden
+            display: none
+
 
 
     /* ----- start background ----- */
@@ -181,10 +225,10 @@ $timeline-position-mobile: 40px
         top: 0
         bottom: 0
         right: 0
-        left: 0
     
     &__outer-background
         overflow: hidden
+        left: 0
 
         &::after
             content: ''
@@ -192,14 +236,18 @@ $timeline-position-mobile: 40px
             top: 50%
             transform: translateY(-50%)
             border-style: solid
-
-            right: calc(100% - 1px - #{$event-timeline-gap})
             border-width: 25px 25px 25px 0
             border-color: transparent $event-background-color transparent transparent
 
+            @media #{$mq-small}
+                left: $event-timeline-gap-mobile / 2
+
+            @media #{$mq-medium-large}
+                right: calc(100% - 1px - #{$event-timeline-gap-desktop})
+
     @media #{$mq-medium-large}
         &:nth-of-type(2n - 1) .event__outer-background::after
-            left: calc(100% - 1px - #{$event-timeline-gap})
+            left: calc(100% - 1px - #{$event-timeline-gap-desktop})
             right: 0
             border-width: 25px 0 25px 25px
             border-color: transparent transparent transparent $event-background-color
@@ -209,33 +257,19 @@ $timeline-position-mobile: 40px
         transform: skewY($skew-degree)
         transform-origin: top left
 
-        left: $event-timeline-gap
+        @media #{$mq-small}
+            left: $event-timeline-gap-mobile
+
+        @media #{$mq-medium-large}
+            left: $event-timeline-gap-desktop
 
     @media #{$mq-medium-large}
         &:nth-of-type(2n - 1) .event__inner-background
-            right: $event-timeline-gap
+            right: $event-timeline-gap-desktop
             left: 0
     
     /* ----- end background ----- */
 
 
 
-    &__open-more-information
-        +text-font
-        margin: 40px 0 20px
-        background: transparent
-        border: 2px solid $button-border-color
-        height: 40px
 
-        @media #{$mq-small}
-            width: 100%
-
-        @media #{$mq-medium-large}
-            width: 180px
-
-    &__more-information
-        +text-font
-        display: block
-        
-        &--hidden
-            display: none
