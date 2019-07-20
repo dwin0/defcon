@@ -71,3 +71,42 @@
     &__list
         @media #{$mq-small}
             align-self: flex-start
+
+    &__form
+        +text-font
+        display: flex
+        flex-direction: column
+        color: $dark-blue
+        max-width: 500px
+        width: 100%
+
+    &__form-label
+        @media #{$mq-small}
+            padding: 30px 0 10px $text-start-position-left
+        @media #{$mq-medium-large}
+            padding: 40px 0 10px $text-start-position-left
+
+        &--focus
+            font-weight: bold
+
+    &__form-input
+        +text-font
+        padding: 10px $text-start-position-left
+        height: 50px
+        border-radius: 25px
+        background: $text-color-light
+        border-style: none
+        outline: none
+        position: relative
+
+        &:focus
+            box-shadow: 0 0 0 2pt $dark-blue
+
+    &__form-submit
+        +text-font
+        height: 50px
+        border-radius: 25px
+        margin-top: 50px
+        border: none
+        background: $dark-blue
+        color: $text-color-light

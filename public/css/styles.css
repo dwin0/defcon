@@ -344,6 +344,76 @@ a {
     align-self: flex-start;
   }
 }
+.topic__form {
+  display: flex;
+  flex-direction: column;
+  color: #122c3a;
+  max-width: 500px;
+  width: 100%;
+}
+@media only screen and (max-width: 767px) {
+  .topic__form {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .topic__form {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .topic__form-label {
+    padding: 30px 0 10px 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .topic__form-label {
+    padding: 40px 0 10px 30px;
+  }
+}
+.topic__form-label--focus {
+  font-weight: bold;
+}
+.topic__form-input {
+  padding: 10px 30px;
+  height: 50px;
+  border-radius: 25px;
+  background: #ffffff;
+  border-style: none;
+  outline: none;
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .topic__form-input {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .topic__form-input {
+    font-size: 20px;
+  }
+}
+.topic__form-input:focus {
+  box-shadow: 0 0 0 2pt #122c3a;
+}
+.topic__form-submit {
+  height: 50px;
+  border-radius: 25px;
+  margin-top: 50px;
+  border: none;
+  background: #122c3a;
+  color: #ffffff;
+}
+@media only screen and (max-width: 767px) {
+  .topic__form-submit {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .topic__form-submit {
+    font-size: 20px;
+  }
+}
 
 .header-wrapper {
   position: relative;
@@ -941,52 +1011,52 @@ a {
   }
 }
 
-.not-found {
+.information-page {
   text-align: center;
   color: #ffffff;
   display: flex;
   flex-direction: column;
 }
 @media only screen and (max-width: 767px) {
-  .not-found {
+  .information-page {
     padding: 10vh 25px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .not-found {
+  .information-page {
     padding: 200px 6vw;
   }
 }
 @media only screen and (min-width: 1024px) {
-  .not-found {
+  .information-page {
     padding: 200px 7vw;
   }
 }
-.not-found__title {
+.information-page__title {
   font-weight: bold;
   margin: 20px 0;
 }
 @media only screen and (max-width: 767px) {
-  .not-found__title {
+  .information-page__title {
     font-size: 24px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .not-found__title {
+  .information-page__title {
     font-size: 30px;
   }
 }
-.not-found__info {
+.information-page__info {
   line-height: 1.5;
   margin: 20px 0;
 }
 @media only screen and (max-width: 767px) {
-  .not-found__info {
+  .information-page__info {
     font-size: 18px;
   }
 }
 @media only screen and (min-width: 768px) {
-  .not-found__info {
+  .information-page__info {
     font-size: 20px;
   }
 }

@@ -97,6 +97,17 @@ eval("window.addEventListener(\"DOMContentLoaded\", () => {\n    const filter = 
 
 /***/ }),
 
+/***/ "./src/js/form.js":
+/*!************************!*\
+  !*** ./src/js/form.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("const activeClassName = \"topic__form-label--focus\";\n\nwindow.addEventListener(\"DOMContentLoaded\", () => {\n    addLabelHighlightListener();\n});\n\nfunction addLabelHighlightListener() {\n    const formInputs = document.getElementsByClassName(\"topic__form-input\");\n\n    Array.from(formInputs).forEach(input =>\n        input.addEventListener(\"focus\", () => {\n            const label = document.querySelector(`label[for=\"${input.id}\"]`);\n            label.classList.add(activeClassName);\n        })\n    );\n\n    Array.from(formInputs).forEach(input =>\n        input.addEventListener(\"focusout\", () => {\n            const label = document.querySelector(`label[for=\"${input.id}\"]`);\n            label.classList.remove(activeClassName);\n        })\n    );\n}\n\n\n//# sourceURL=webpack:///./src/js/form.js?");
+
+/***/ }),
+
 /***/ "./src/js/image-gallery.js":
 /*!*********************************!*\
   !*** ./src/js/image-gallery.js ***!
@@ -120,13 +131,13 @@ eval("const hamburgerOpenClass = \"hamburger-button--open\";\nconst menuOpenClas
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************!*\
-  !*** multi ./src/js/navigation.js ./src/js/image-gallery.js ./src/js/events.js ***!
-  \*********************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** multi ./src/js/navigation.js ./src/js/image-gallery.js ./src/js/events.js ./src/js/form.js ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./src/js/navigation.js */\"./src/js/navigation.js\");\n__webpack_require__(/*! ./src/js/image-gallery.js */\"./src/js/image-gallery.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/events.js */\"./src/js/events.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/navigation.js_./src/js/image-gallery.js_./src/js/events.js?");
+eval("__webpack_require__(/*! ./src/js/navigation.js */\"./src/js/navigation.js\");\n__webpack_require__(/*! ./src/js/image-gallery.js */\"./src/js/image-gallery.js\");\n__webpack_require__(/*! ./src/js/events.js */\"./src/js/events.js\");\nmodule.exports = __webpack_require__(/*! ./src/js/form.js */\"./src/js/form.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/navigation.js_./src/js/image-gallery.js_./src/js/events.js_./src/js/form.js?");
 
 /***/ })
 

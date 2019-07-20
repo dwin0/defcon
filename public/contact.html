@@ -3,7 +3,146 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Defcons | Contact</title>
+        <meta name="msapplication-TileColor" content="#122c3a" />
+        <meta name="theme-color" content="#122c3a" />
+        <meta name="description" content="Switzerlands local DefCon group" />
+        <meta
+            name="keywords"
+            content="DefCon Switzerland, DC4131, Beer on tuesday, Dojo"
+        />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="favicons/favicon-16x16.png"
+        />
+        <link
+            rel="mask-icon"
+            href="favicons/safari-pinned-tab.svg"
+            color="#122c3a"
+        />
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <title>Defcon | Contact</title>
     </head>
-    <body></body>
+    <body>
+        <header class="header">
+            <a href="index.html" class="header__logo-link-wrapper">
+                <img
+                    src="images/logo.png"
+                    alt="defcon switzerland logo"
+                    class="header__logo-img"
+                />
+            </a>
+            <button class="hamburger-button">
+                Menu
+                <div class="hamburger-button__icon-wrapper">
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--top"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--center"
+                    ></span>
+                    <span
+                        class="hamburger-button__icon-line hamburger-button__icon-line--bottom"
+                    ></span>
+                </div>
+            </button>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a class="menu__item-link" href="events.html">Events</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item-link" href="about-us.html">About us</a>
+                </li>
+                <li class="menu__item">
+                    <a
+                        class="menu__item-link menu__item-link--active"
+                        href="contact.html"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+        </header>
+
+        <main>
+            <section class="topic">
+                <div class="topic__text-wrapper">
+                    <h1 class="topic__title">Did we get your interest?</h1>
+                    <p>
+                        Please provide the following contact details so that we
+                        can reach you if you decide to become a member.
+                    </p>
+                </div>
+            </section>
+
+            <section class="topic">
+                <div class="topic__text-wrapper">
+                    <h1 class="topic__title">Contact us</h1>
+                </div>
+                <form action="" method="post" class="topic__form">
+                    <label class="topic__form-label" for="first-and-last-name">
+                        First name / Last name
+                    </label>
+                    <input
+                        class="topic__form-input"
+                        type="text"
+                        id="first-and-last-name"
+                        required
+                    />
+
+                    <label class="topic__form-label" for="street-and-nr">
+                        Street / Nr
+                    </label>
+                    <input
+                        class="topic__form-input"
+                        type="text"
+                        id="street-and-nr"
+                        required
+                    />
+
+                    <label class="topic__form-label" for="zip-and-city">
+                        Zip / City
+                    </label>
+                    <input
+                        class="topic__form-input"
+                        type="text"
+                        id="zip-and-city"
+                        required
+                    />
+
+                    <input
+                        class="topic__form-submit"
+                        type="submit"
+                        value="Send &rarr;"
+                    />
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; DC4131</p>
+            <address class="footer__address">
+                <span class="footer__address-element">DEFCON Switzerland</span>
+                <span class="footer__address-element">8000 Zurich</span>
+                <span class="footer__address-element">Switzerland</span>
+            </address>
+            <a href="mailto:board@defcon-switzerland.org"
+                >board@defcon-switzerland.org</a
+            >
+        </footer>
+
+        <script src="js/app.bundle.js"></script>
+    </body>
 </html>
