@@ -1,8 +1,9 @@
 const imageVisibleClass = "image-gallery__image--visible";
 
 window.addEventListener("load", () => {
-    if(!hasImageGallery()) {
-        return
+    if (!hasImageGallery()) {
+        // page is not homepage
+        return;
     }
 
     const galleryImages = [];
@@ -13,7 +14,7 @@ window.addEventListener("load", () => {
 });
 
 function hasImageGallery() {
-    return document.getElementsByClassName('image-gallery').length
+    return document.getElementsByClassName("image-gallery").length;
 }
 
 function getInitialImage(galleryImages) {
