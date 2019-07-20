@@ -30,5 +30,13 @@ npm run build
 
 # Editing instructions
 
--   Make sure the event name matches the exact event filter name in order to make the filter work
--   Make sure the location name matches the exact location filter name in order to make the filter work
+-   Make sure the event name
+    ```html
+    <p class="event__name">Beer on tuesday</p>
+    ```
+    matches the exact event filter value
+    ```html
+    value="Beer on tuesday"
+    ```
+    in order to make the filter work
+-   Make sure the location name matches the exact location filter value in order to make the filter work
